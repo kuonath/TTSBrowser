@@ -6,8 +6,10 @@ function SelectText(element, calledFromAndroid) {
     ;    
     if (doc.body.createTextRange) {
         range = document.body.createTextRange();
-        range.moveToElementText(text);
-        range.select();
+        //if(text != null) {}
+            range.moveToElementText(text);
+            range.select();
+        //}
     } else if (window.getSelection) {
         selection = window.getSelection();        
         range = document.createRange();
@@ -20,7 +22,7 @@ function SelectText(element, calledFromAndroid) {
 
     if(calledFromAndroid == 1) {
         var text = getSelectedText();
-        Android.showCAB(element, text)
+        Android.onTextSelected(element, text)
     }
 }
 
@@ -39,7 +41,7 @@ document.onclick = function(e) {
     var id = e.target.id, text, success;
     SelectText(id, 0);
     text = getSelectedText();
-    Android.showCAB(id, text);
+    Android.onTextSelected(id, text);
 };
 </script>
 
