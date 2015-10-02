@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TTSBrowser</string>
+
+    <string name="read">Read</string>
+    <string name="stop_reading">Stop reading</string>
+
+    <string name="toast_tts_ready">TTS ready</string>
+    <string name="toast_tts_failed">Sorry! Text To Speech init failed...</string>
+    <string name="toast_err_speaking">An error occurred while speaking...</string>
+
+    <string name="toast_asr_ready">ASR ready</string>
+    <string name="toast_asr_failed">Sorry! ASR init failed...</string>
+    <string name="toast_asr_error">ASR: an error occurred</string>
+
+    <string name="toast_no_accel">No linear acceleration sensor!</string>
+    <string name="toast_no_gyro">No gyroscope!</string>
+</resources>

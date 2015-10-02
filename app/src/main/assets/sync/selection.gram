@@ -1,0 +1,17 @@
+#JSGF V1.0;
+
+grammar selection;
+
+<select> = select;
+
+<digits> =	   one     |  
+	   	   two     |
+		   three   |
+		   four    |
+		   five    |
+		   six     |
+		   seven   |
+		   eight   |
+		   nine    ;
+
+public <selection> = <select> <digits>;

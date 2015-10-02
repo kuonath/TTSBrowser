@@ -1,0 +1,100 @@
+http://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
+
+<script type="text/javascript">
+var doc = document, textprev, range, selection;
+
+function SelectText(element) {
+    /*var doc = document
+        , text = doc.getElementById(element)
+        , range, selection
+    ;*/
+    text = doc.getElementById(element); 
+
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        var range2 = range.duplicate();
+        range.moveToElementText(document.getElementById(element));
+        range.setEndPoint("EndToEnd", range2);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        selection.removeAllRanges();
+        range = document.createRange();
+        if(textprev != null) {
+            range.setStart(textprev, 0);
+            range.setEnd(text, 1);
+        } else {
+            range.selectNodeContents(text);
+        }
+        
+        selection.addRange(range);
+    }
+}
+
+document.onclick = function(e) {    
+    var id = e.target.id;
+    SelectText(id);
+    Android.showCAB();
+};
+</script>
+
+<p id="p1">
+Hungary has declared a state of emergency in two southern counties as tough new laws to stop migrants entering illegally came into force.
+</p>
+
+<br/>
+
+<p id="p2">
+Police can now detain anyone trying to breach a razor-wire fence built on the border with Serbia.
+</p>
+
+<br/>
+
+<p id="p3">
+The EU is facing a huge influx of migrants, many fleeing conflict and poverty in countries including Syria.
+</p>
+
+<br/>
+
+<p id="p4">
+A boat carrying migrants from Turkey to Greece sank on Tuesday, leaving 22 people dead, Turkish media reported.
+</p>
+
+<br/>
+
+<p id="p5">
+Starting on Tuesday, the EU has agreed to relocate 40,000 migrants from Greece and Italy to other EU states. But it has yet to agree on mandatory quotas for a further 120,000 asylum seekers.
+</p>
+
+<br/>
+
+<p id="p6">
+The new Hungarian laws came into effect at midnight (22:00 GMT Monday).
+</p>
+
+<br/>
+
+<p id="p7">
+Police sealed a railway crossing point that had been used by tens of thousands of migrants, and many slept out in the open on the Serbian side of the border.
+</p>
+
+<br/>
+
+<p id="p8">
+Around midday there were tense scenes as hundreds streamed towards the fence, some searching for a way through and others starting a sit-down strike, throwing down food and water in protest at not being granted passage.
+</p>
+
+<br/>
+
+<p id="p9">
+The state of emergency gives police more powers, and allows for the deployment of troops, pending parliamentary approval.
+</p>
+
+<br/>
+
+<p id="p10">
+Police buses will now take asylum applicants to registration centres, but if their applications are refused they will now be returned to Serbia rather than being given passage through Hungary, the BBC's Nick Thorpe reports from the border. 
+</p>
+
+<br/>

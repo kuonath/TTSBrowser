@@ -1,0 +1,9 @@
+#JSGF V1.0;
+
+grammar continue;
+
+<options> =	   next     |  
+	   	   previous |
+		   read;
+
+public <continue> = <options>;
